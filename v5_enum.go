@@ -22,6 +22,8 @@ const (
 	CategoryV5Inverse = CategoryV5("inverse")
 	// CategoryV5Option :
 	CategoryV5Option = CategoryV5("option")
+	// CategoryV5FlexibleSaving :
+	CategoryV5FlexibleSaving = CategoryV5("FlexibleSaving")
 )
 
 // SymbolV5 :
@@ -341,4 +343,11 @@ const (
 	AdlRankIndicator3 = AdlRankIndicator(3)
 	AdlRankIndicator4 = AdlRankIndicator(4)
 	AdlRankIndicator5 = AdlRankIndicator(5)
+)
+
+type OrderTypeV5 string
+
+const (
+	OrderTypeV5Stake  = OrderTypeV5("Stake")
+	OrderTypeV5Redeem = OrderTypeV5("Redeem")
 )
