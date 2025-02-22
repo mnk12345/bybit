@@ -63,6 +63,11 @@ func (s *V5Service) User() V5UserServiceI {
 	return &V5UserService{s.client}
 }
 
+// Asset :
+func (s *V5Service) Earn() V5EarnServiceI {
+	return &V5EarnService{s.client}
+}
+
 // V5 :
 func (c *Client) V5() V5ServiceI {
 	return &V5Service{c.withCheckResponseBody(checkV5ResponseBody)}
