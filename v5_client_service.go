@@ -11,6 +11,7 @@ type V5ServiceI interface {
 	SpotMarginTrade() V5SpotMarginTradeServiceI
 	Asset() V5AssetServiceI
 	User() V5UserServiceI
+	Earn() V5EarnServiceI
 }
 
 // V5Service :
