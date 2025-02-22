@@ -19,7 +19,7 @@ type V5EarnService struct {
 type V5GetStakedPositionsParam struct {
 	Category  CategoryV5 `url:"category"`
 	ProductID *string    `json:"productId,omitempty"`
-	Coin      string
+	Coin      Coin
 }
 
 // GetStakedPositions :
@@ -54,11 +54,11 @@ type V5GetStakedPositionsList []V5GetStakedPositionsItem
 
 // V5GetStakedPositionsItem :
 type V5GetStakedPositionsItem struct {
-	Coin           string
-	ProductId      string
-	Amount         string
-	TotalPnl       string
-	ClaimableYield string
+	Coin           Coin   `json:"coin"`
+	ProductId      string `json:"productId"`
+	Amount         string `json:"amount"`
+	TotalPnl       string `json:"totalPnl"`
+	ClaimableYield string `json:"claimableYield"`
 }
 
 // UnmarshalJSON :
@@ -69,7 +69,7 @@ func (l *V5GetStakedPositionsList) UnmarshalJSON(data []byte) error {
 	}
 	for _, d := range parsedData {
 		*l = append(*l, V5GetStakedPositionsItem{
-			Coin:           d[0].(string),
+			Coin:           d[0].(Coin),
 			ProductId:      d[1].(string),
 			Amount:         d[2].(string),
 			TotalPnl:       d[3].(string),
