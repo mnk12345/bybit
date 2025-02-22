@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/hirokisan/bybit/v2/testhelper"
+	"github.com/mnk12345/bybit/v2/testhelper"
 	"github.com/stretchr/testify/require"
 )
 
