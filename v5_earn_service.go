@@ -10,6 +10,7 @@ import (
 type V5EarnServiceI interface {
 	GetProductInfo(V5GetProductInfoParam) (*V5GetProductInfoResponse, error)
 	GetStakedPositions(V5GetStakedPositionsParam) (*V5GetStakedPositionsResponse, error)
+	StakeRedeem(param V5StakeRedeemParam) (*V5StakeRedeemResponse, error)
 }
 
 // V5EarnService :
