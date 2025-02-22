@@ -121,14 +121,14 @@ type V5GetProductInfoList []V5GetProductInfoItem
 
 // V5GetProductInfoItem :
 type V5GetProductInfoItem struct {
-	Coin           Coin       `json:"coin"`
-	ProductId      string     `json:"productId"`
-	MinStakeAmount string     `json:"minStakeAmount"`
-	MaxStakeAmount string     `json:"maxStakeAmount"`
-	EstimateApr    string     `json:"estimateApr"`
-	Precision      string     `json:"precision"`
-	Status         string     `json:"status"`
-	Category       CategoryV5 `json:"category"`
+	Coin           Coin         `json:"coin"`
+	ProductId      string       `json:"productId"`
+	MinStakeAmount string       `json:"minStakeAmount"`
+	MaxStakeAmount string       `json:"maxStakeAmount"`
+	EstimateApr    string       `json:"estimateApr"`
+	Precision      string       `json:"precision"`
+	Status         EarnStatusV5 `json:"status"`
+	Category       CategoryV5   `json:"category"`
 }
 
 // V5GetProductInfoParam :

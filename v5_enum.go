@@ -351,3 +351,10 @@ const (
 	OrderTypeV5Stake  = OrderTypeV5("Stake")
 	OrderTypeV5Redeem = OrderTypeV5("Redeem")
 )
+
+type EarnStatusV5 string
+
+const (
+	EarnStatusV5Available    = EarnStatusV5("Available")
+	EarnStatusV5NotAvailable = EarnStatusV5("NotAvailable")
+)
