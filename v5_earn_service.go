@@ -39,6 +39,10 @@ func (p V5GetStakedPositionsParam) validate() error {
 func (s *V5EarnService) GetStakedPositions(param V5GetStakedPositionsParam) (*V5GetStakedPositionsResponse, error) {
 	var res V5GetStakedPositionsResponse
 
+	if err := param.validate(); err != nil {
+		return nil, fmt.Errorf("validate param: %w", err)
+	}
+
 	queryString, err := query.Values(param)
 	if err != nil {
 		return nil, err
@@ -93,6 +97,10 @@ func (p V5GetProductInfoParam) validate() error {
 // GetProductInfo :
 func (s *V5EarnService) GetProductInfo(param V5GetProductInfoParam) (*V5GetProductInfoResponse, error) {
 	var res V5GetProductInfoResponse
+
+	if err := param.validate(); err != nil {
+		return nil, fmt.Errorf("validate param: %w", err)
+	}
 
 	queryString, err := query.Values(param)
 	if err != nil {
