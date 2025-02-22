@@ -1,7 +1,6 @@
 package bybit
 
 import (
-	"encoding/json"
 	"github.com/google/go-querystring/query"
 )
 
@@ -59,22 +58,4 @@ type V5GetStakedPositionsItem struct {
 	Amount         string `json:"amount"`
 	TotalPnl       string `json:"totalPnl"`
 	ClaimableYield string `json:"claimableYield"`
-}
-
-// UnmarshalJSON :
-func (l *V5GetStakedPositionsList) UnmarshalJSON(data []byte) error {
-	parsedData := [][]interface{}{}
-	if err := json.Unmarshal(data, &parsedData); err != nil {
-		return err
-	}
-	for _, d := range parsedData {
-		*l = append(*l, V5GetStakedPositionsItem{
-			Coin:           d[0].(Coin),
-			ProductId:      d[1].(string),
-			Amount:         d[2].(string),
-			TotalPnl:       d[3].(string),
-			ClaimableYield: d[4].(string),
-		})
-	}
-	return nil
 }
