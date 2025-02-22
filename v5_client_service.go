@@ -64,7 +64,7 @@ func (s *V5Service) User() V5UserServiceI {
 	return &V5UserService{s.client}
 }
 
-// Asset :
+// Earn :
 func (s *V5Service) Earn() V5EarnServiceI {
 	return &V5EarnService{s.client}
 }
