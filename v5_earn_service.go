@@ -142,13 +142,13 @@ type V5GetProductInfoItem struct {
 
 // V5GetProductInfoParam :
 type V5StakeRedeemParam struct {
-	Category    CategoryV5 `url:"category"`
-	Coin        Coin
-	OrderType   OrderTypeV5
-	AccountType AccountTypeV5
-	Amount      string
-	ProductId   string
-	OrderLinkId string
+	Category    CategoryV5    `json:"category"`
+	Coin        Coin          `json:"coin"`
+	OrderType   OrderTypeV5   `json:"orderType"`
+	AccountType AccountTypeV5 `json:"accountType"`
+	Amount      string        `json:"amount"`
+	ProductId   string        `json:"productId"`
+	OrderLinkId string        `json:"orderLinkId"`
 }
 
 // StakeRedeem :
