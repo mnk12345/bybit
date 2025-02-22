@@ -15,14 +15,14 @@ type V5EarnService struct {
 	client *Client
 }
 
-// V5GetKlineParam :
+// V5GetStakedPositionsParam :
 type V5GetStakedPositionsParam struct {
 	Category  CategoryV5 `url:"category"`
 	ProductID *string    `json:"productId,omitempty"`
 	Coin      string
 }
 
-// GetKline :
+// GetStakedPositions :
 func (s *V5EarnService) GetStakedPositions(param V5GetStakedPositionsParam) (*V5GetStakedPositionsResponse, error) {
 	var res V5GetStakedPositionsResponse
 
@@ -31,14 +31,14 @@ func (s *V5EarnService) GetStakedPositions(param V5GetStakedPositionsParam) (*V5
 		return nil, err
 	}
 
-	if err := s.client.getPublicly("/v5/earn/position", queryString, &res); err != nil {
+	if err := s.client.getV5Privately("/v5/earn/position", queryString, &res); err != nil {
 		return nil, err
 	}
 
 	return &res, nil
 }
 
-// V5GetMarkPriceKlineResponse :
+// V5GetStakedPositionsResponse :
 type V5GetStakedPositionsResponse struct {
 	CommonV5Response `json:",inline"`
 	Result           V5GetStakedPositionsResult `json:"result"`
@@ -49,10 +49,10 @@ type V5GetStakedPositionsResult struct {
 	List V5GetStakedPositionsList `json:"list"`
 }
 
-// V5GetMarkPriceKlineList :
+// V5GetStakedPositionsList :
 type V5GetStakedPositionsList []V5GetStakedPositionsItem
 
-// V5GetMarkPriceKlineItem :
+// V5GetStakedPositionsItem :
 type V5GetStakedPositionsItem struct {
 	Coin           string
 	ProductId      string
